@@ -1,10 +1,10 @@
 import React from 'react'
-import { Checkbox } from 'antd'
+import { Radio } from 'antd'
 import { Page } from 'components'
 import HighChartsComponent from './HighChartsComponent'
 import styles from './page.less'
 
-const CheckboxGroup = Checkbox.Group
+const RadioGroup = Radio.Group
 
 const chartList = [
   {
@@ -29,19 +29,18 @@ class Chart extends React.Component {
   constructor () {
     super()
     this.state = {
-      type: ['MemAllocs'],
+      type: 'MemAllocs',
     }
     this.handleRadioGroupChange = this.handleRadioGroupChange.bind(this)
   }
   handleRadioGroupChange (e) {
-    console.log(e, 963022)
     this.setState({
-      type: e,
+      type: e.target.value,
     })
   }
   render () {
     return (<Page inner>
-      <CheckboxGroup options={chartList} defaultValue={['MemAllocs']} onChange={this.handleRadioGroupChange} />
+      <RadioGroup options={chartList} defaultValue="MemAllocs" onChange={this.handleRadioGroupChange} />
       <div className={styles.chart}>
         <HighChartsComponent type={this.state.type} />
       </div>
