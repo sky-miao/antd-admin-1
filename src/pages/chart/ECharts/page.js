@@ -107,5 +107,5 @@ class Chart extends React.Component {
   }
 }
 
-
+// chart index
 export default Chart

@@ -48,4 +48,5 @@ EchartsComponent.propTypes = {
   type: PropTypes.string,
 }
 
+// The return value is set according to type
 export default EchartsComponent

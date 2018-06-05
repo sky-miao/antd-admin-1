@@ -19,13 +19,17 @@ const chartList = [
     label: 'HighMore',
     value: 'HighMore',
   },
+  {
+    label: 'MemAllocs',
+    value: 'MemAllocs',
+  },
 ]
 
 class Chart extends React.Component {
   constructor () {
     super()
     this.state = {
-      type: '',
+      type: 'MemAllocs',
     }
     this.handleRadioGroupChange = this.handleRadioGroupChange.bind(this)
   }
@@ -36,7 +40,7 @@ class Chart extends React.Component {
   }
   render () {
     return (<Page inner>
-      <RadioGroup options={chartList} defaultValue="Highstock" onChange={this.handleRadioGroupChange} />
+      <RadioGroup options={chartList} defaultValue="MemAllocs" onChange={this.handleRadioGroupChange} />
       <div className={styles.chart}>
         <HighChartsComponent type={this.state.type} />
       </div>
