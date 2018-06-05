@@ -14,8 +14,10 @@ class MemAllocsComponent extends React.Component {
   // GROUP BY time(10s), "coinbase", "networkid", "nodename" fill(null)
 
   componentDidMount () {
-    let query = 'SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(10s), "coinbase", "networkid", "nodename" fill(null)'
-    this.props.getMemAllocs(query)
+    let params = {
+      sql:'SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(10s), "coinbase", "networkid", "nodename" fill(null)',
+    }
+    this.props.getMemAllocs(params)
   }
 
   getOption () {

@@ -12,7 +12,7 @@ module.exports = {
   logo: '/public/logo.png',
   iconFontCSS: '/public/iconfont.css',
   iconFontJS: '/public/iconfont.js',
-  CORS: [],
+  CORS: ['http://wxcsdb88.com:61001', 'http://wxcsdb88.com:3000'],
   openPages: ['/login'],
   apiPrefix: '/api/v1',
   APIV1,
