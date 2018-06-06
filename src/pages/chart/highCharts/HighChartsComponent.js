@@ -7,7 +7,7 @@ import MemAllocsComponent from './MemAllocsComponent'
 
 
 const HighChartsComponent = ({ type }) => {
-  let Comp = ['Highmaps', 'HighMore', 'MemAllocs', 'Highstock']
+  let Comp = ['Highstock', 'Highmaps', 'HighMore', 'MemAllocs' ]
   Comp = Comp.filter(i => {
     if(type.indexOf(i) < 0) {
       return false
@@ -19,14 +19,14 @@ const HighChartsComponent = ({ type }) => {
     <div>
       {
         Comp.map((i, n) => {
-          if(/Highmaps/.test(i)){
+          if (/Highstock/.test(i)){
+            return (<HighstockComponent key={n} />)
+          } else if (/Highmaps/.test(i)){
             return (<HighmapsComponent key={n} />)
           } else if (/HighMore/.test(i)){
             return (<HighMoreComponent key={n} />)
-          } else if (/MemAllocs/.test(i)){
-            return (<MemAllocsComponent key={n} />)
           } else {
-            return (<HighstockComponent key={n} />)
+            return (<MemAllocsComponent key={n} />)
           }
         })
       }

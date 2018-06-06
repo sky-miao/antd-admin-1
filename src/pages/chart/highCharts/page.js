@@ -41,8 +41,8 @@ class Chart extends React.Component {
     })
   }
   changeSel (key) {
-    this.props.querySh({
-      key,
+    this.props.getMemAllocs({
+      sql: `SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(${key}), "coinbase", "networkid", "nodename" fill(null)`, // 把key拼串
     })
   }
   render () {
@@ -50,10 +50,10 @@ class Chart extends React.Component {
       <CheckboxGroup options={chartList} defaultValue={['MemAllocs']} onChange={this.handleCheckGroupChange} />
       <Select
         onChange={this.changeSel.bind(this)}
-        defaultValue={["1"]}
+        defaultValue={['10s']}
       >
-        <Option key="1">第一个</Option>
-        <Option key="2">第二个</Option>
+        <Option key={'10s'}>第一个</Option>
+        <Option key={'20s'}>第二个</Option>
       </Select>
       <div className={styles.chart}>
         <HighChartsComponent type={this.state.type} />
@@ -70,10 +70,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    querySh (payload) {
-      console.log(`query something and data = ${JSON.stringify(payload)}`)
-      // dispatch({ type: 'query/query', payload })
-      console.log(dispatch)
+    getMemAllocs (payload) {
+      dispatch({ type: 'MemAllocs/getMemAllocs', payload })
     },
   }
 }

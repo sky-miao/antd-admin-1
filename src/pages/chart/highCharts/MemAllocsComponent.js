@@ -14,12 +14,9 @@ class MemAllocsComponent extends React.Component {
   // GROUP BY time(10s), "coinbase", "networkid", "nodename" fill(null)
 
   componentDidMount () {
-    // let {tempData} = this.props.query
-    // let params = {
-    //   key: tempData
-    // }
+    let {selectType} = this.props.highCharts
     let params = {
-      sql:'SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(10s), "coinbase", "networkid", "nodename" fill(null)',
+      sql:`SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(${selectType}), "coinbase", "networkid", "nodename" fill(null)`,
     }
     this.props.getMemAllocs(params)
   }

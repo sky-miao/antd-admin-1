@@ -15,8 +15,8 @@ export default modelExtend({
   effects: {
 
     * getMemAllocs ({payload}, { put, call }) {
-      let data = yield call(queryMemAllocs, payload)
-      yield put({ type: 'MemAllocs', payload: data.data })
+      let MemAllocsdata = yield call(queryMemAllocs, payload)
+      yield put({ type: 'MemAllocs', payload: MemAllocsdata.data })
     },
 
   },
