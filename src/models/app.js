@@ -22,10 +22,12 @@ export default {
     },
     menu: [
       {
-        id: 1,
-        icon: 'laptop',
-        name: 'Dashboard',
-        router: '/dashboard',
+        id: '51',
+        bpid: '5',
+        mpid: '5',
+        name: 'ECharts',
+        icon: 'line-chart',
+        route: '/chart/ECharts',
       },
     ],
     menuPopoverVisible: false,
@@ -77,6 +79,7 @@ export default {
           permissions.visit = list.map(item => item.id)
         } else {
           menu = list.filter((item) => {
+            console.log(item, 56302)
             const cases = [
               permissions.visit.includes(item.id),
               item.mpid ? permissions.visit.includes(item.mpid) || item.mpid === '-1' : true,
@@ -95,7 +98,7 @@ export default {
         })
         if (location.pathname === '/login') {
           yield put(routerRedux.push({
-            pathname: '/dashboard',
+            pathname: '/chart/ECharts',
           }))
         }
       } else if (config.openPages && config.openPages.indexOf(locationPathname) < 0) {
@@ -120,7 +123,7 @@ export default {
               id: 1,
               icon: 'laptop',
               name: 'Dashboard',
-              router: '/dashboard',
+              router: '/chart/ECharts',
             }],
         }})
         yield put({ type: 'query' })
