@@ -29,7 +29,7 @@ class MapChartComponent extends React.Component {
         max: 2500,
         left: 'left',
         top: 'bottom',
-        text: ['高', '低'], // 文本，默认为数值文本
+        text: ['高', '低'],
         calculable: true,
       },
       toolbox: {

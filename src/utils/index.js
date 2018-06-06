@@ -6,19 +6,16 @@ export config from './config'
 export request from './request'
 export { color } from './theme'
 
-// 连字符转驼峰
 String.prototype.hyphenToHump = function () {
   return this.replace(/-(\w)/g, (...args) => {
     return args[1].toUpperCase()
   })
 }
 
-// 驼峰转连字符
 String.prototype.humpToHyphen = function () {
   return this.replace(/([A-Z])/g, '-$1').toLowerCase()
 }
 
-// 日期格式化
 Date.prototype.format = function (format) {
   const o = {
     'M+': this.getMonth() + 1,

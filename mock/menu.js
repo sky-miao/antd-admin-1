@@ -30,14 +30,14 @@ let database = [
     icon: 'bar-chart',
     route: '/chart/highCharts',
   },
-  {
-    id: '53',
-    bpid: '5',
-    mpid: '5',
-    name: 'Rechartst',
-    icon: 'area-chart',
-    route: '/chart/Recharts',
-  },
+  // {
+  //   id: '53',
+  //   bpid: '5',
+  //   mpid: '5',
+  //   name: 'Rechartst',
+  //   icon: 'area-chart',
+  //   route: '/chart/Recharts',
+  // },
 ]
 
 module.exports = {

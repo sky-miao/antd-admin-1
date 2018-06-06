@@ -42,7 +42,7 @@ class Chart extends React.Component {
   }
   changeSel (key) {
     this.props.getMemAllocs({
-      sql: `SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(${key}), "coinbase", "networkid", "nodename" fill(null)`, // 把key拼串
+      sql: `SELECT count("value") FROM "runtime.memory.allocs.gauge" WHERE time >= now() - 5m GROUP BY time(${key}), "coinbase", "networkid", "nodename" fill(null)`,
     })
   }
   render () {

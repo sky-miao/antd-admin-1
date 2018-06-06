@@ -11,11 +11,9 @@ let openKeysFlag = false
 const Menus = ({
   siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, location,
 }) => {
-  // 生成树状
   const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid')
   const levelMap = {}
 
-  // 递归生成菜单
   const getMenus = (menuTreeN, siderFoldN) => {
     return menuTreeN.map((item) => {
       if (item.children) {
@@ -46,7 +44,6 @@ const Menus = ({
   }
   const menuItems = getMenus(menuTree, siderFold)
 
-  // 保持选中
   const getAncestorKeys = (key) => {
     let map = {}
     const getParent = (index) => {
@@ -84,7 +81,6 @@ const Menus = ({
   } : {}
 
 
-  // 寻找选中路由
   let currentMenu
   let defaultSelectedKeys
   for (let item of menu) {

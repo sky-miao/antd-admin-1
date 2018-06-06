@@ -7,7 +7,7 @@ import pathToRegexp from 'path-to-regexp'
 import styles from './Layout.less'
 
 const Bread = ({ menu, location }) => {
-  // 匹配当前路由
+  // Match the current route
   let pathArray = []
   let current
   for (let index in menu) {
@@ -50,7 +50,6 @@ const Bread = ({ menu, location }) => {
     }
   }
 
-  // 递归查找父级
   const breads = pathArray.map((item, key) => {
     const content = (
       <span>{item.icon
