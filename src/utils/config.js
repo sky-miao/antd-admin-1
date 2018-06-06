@@ -9,6 +9,7 @@ module.exports = {
   name: 'dashboard',
   prefix: 'dashboard',
   footerText: 'seele-dashboard  © 2018 seele',
+  logos: '/public/logo_s.png',
   logo: '/public/logo.png',
   iconFontCSS: '/public/iconfont.css',
   iconFontJS: '/public/iconfont.js',
