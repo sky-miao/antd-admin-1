@@ -23,13 +23,6 @@ let database = [
     route: '/user/:id',
   },
   {
-    id: '3',
-    bpid: '1',
-    name: 'Request',
-    icon: 'api',
-    route: '/request',
-  },
-  {
     id: '5',
     bpid: '1',
     name: 'Charts',
