@@ -14,12 +14,12 @@ const chartList = [
     value: 'Highstock',
   },
   {
-    label: 'Highmaps',
-    value: 'Highmaps',
+    label: 'Highstock1',
+    value: 'Highstock1',
   },
   {
-    label: 'HighMore',
-    value: 'HighMore',
+    label: 'Highstock2',
+    value: 'Highstock2',
   },
   {
     label: 'MemAllocs',
@@ -52,8 +52,8 @@ class Chart extends React.Component {
         onChange={this.changeSel.bind(this)}
         defaultValue={['10s']}
       >
-        <Option key={'10s'}>第一个</Option>
-        <Option key={'20s'}>第二个</Option>
+        <Option key={'10s'}>10s</Option>
+        <Option key={'20s'}>20s</Option>
       </Select>
       <div className={styles.chart}>
         <HighChartsComponent type={this.state.type} />

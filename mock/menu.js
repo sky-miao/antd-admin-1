@@ -2,12 +2,6 @@ const { config } = require('./common')
 
 const { apiPrefix } = config
 let database = [
-  // {
-  //   id: '1',
-  //   icon: 'dashboard',
-  //   name: 'Dashboard',
-  //   route: '/dashboard',
-  // },
   {
     id: '5',
     bpid: '1',

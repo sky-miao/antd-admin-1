@@ -1,13 +1,13 @@
 import React from 'react'
 
 import HighstockComponent from './HighstockComponent'
-import HighmapsComponent from './HighmapsComponent'
-import HighMoreComponent from './HighMoreComponent'
+import HighstockComponent1 from './HighstockComponent1'
+import HighstockComponent2 from './HighstockComponent2'
 import MemAllocsComponent from './MemAllocsComponent'
 
 
 const HighChartsComponent = ({ type }) => {
-  let Comp = ['Highstock', 'Highmaps', 'HighMore', 'MemAllocs' ]
+  let Comp = ['Highstock', 'Highstock1', 'Highstock2', 'MemAllocs' ]
   Comp = Comp.filter(i => {
     if(type.indexOf(i) < 0) {
       return false
@@ -21,10 +21,10 @@ const HighChartsComponent = ({ type }) => {
         Comp.map((i, n) => {
           if (/Highstock/.test(i)){
             return (<HighstockComponent key={n} />)
-          } else if (/Highmaps/.test(i)){
-            return (<HighmapsComponent key={n} />)
-          } else if (/HighMore/.test(i)){
-            return (<HighMoreComponent key={n} />)
+          } else if (/Highstock1/.test(i)){
+            return (<HighstockComponent1 key={n} />)
+          } else if (/Highstock2/.test(i)){
+            return (<HighstockComponent2 key={n} />)
           } else {
             return (<MemAllocsComponent key={n} />)
           }
