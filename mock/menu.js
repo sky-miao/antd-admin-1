@@ -9,20 +9,6 @@ let database = [
     route: '/dashboard',
   },
   {
-    id: '2',
-    bpid: '1',
-    name: 'Users',
-    icon: 'user',
-    route: '/user',
-  },
-  {
-    id: '21',
-    mpid: '-1',
-    bpid: '2',
-    name: 'User Detail',
-    route: '/user/:id',
-  },
-  {
     id: '5',
     bpid: '1',
     name: 'Charts',

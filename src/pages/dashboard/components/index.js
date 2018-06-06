@@ -7,6 +7,5 @@ import Comments from './comments'
 import Completed from './completed'
 import Browser from './browser'
 import Cpu from './cpu'
-import User from './user'
 
-export { NumberCard, Quote, Sales, Weather, RecentSales, Comments, Completed, Browser, Cpu, User }
+export { NumberCard, Quote, Sales, Weather, RecentSales, Comments, Completed, Browser, Cpu }
