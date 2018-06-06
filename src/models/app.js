@@ -22,12 +22,12 @@ export default {
     },
     menu: [
       {
-        id: '51',
+        id: '52',
         bpid: '5',
         mpid: '5',
-        name: 'ECharts',
-        icon: 'line-chart',
-        route: '/chart/ECharts',
+        name: 'highCharts',
+        icon: 'bar-chart',
+        route: '/chart/highCharts',
       },
     ],
     menuPopoverVisible: false,
@@ -98,7 +98,7 @@ export default {
         })
         if (location.pathname === '/login') {
           yield put(routerRedux.push({
-            pathname: '/chart/ECharts',
+            pathname: '/chart/highCharts',
           }))
         }
       } else if (config.openPages && config.openPages.indexOf(locationPathname) < 0) {
@@ -120,11 +120,13 @@ export default {
           user: {},
           permissions: { visit: [] },
           menu: [{
-              id: 1,
-              icon: 'laptop',
-              name: 'Dashboard',
-              router: '/chart/ECharts',
-            }],
+            id: '52',
+            bpid: '5',
+            mpid: '5',
+            name: 'highCharts',
+            icon: 'bar-chart',
+            route: '/chart/highCharts',
+          }],
         }})
         yield put({ type: 'query' })
       } else {

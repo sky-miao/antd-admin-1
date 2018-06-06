@@ -14,14 +14,14 @@ let database = [
     name: 'Charts',
     icon: 'code-o',
   },
-  {
-    id: '51',
-    bpid: '5',
-    mpid: '5',
-    name: 'ECharts',
-    icon: 'line-chart',
-    route: '/chart/ECharts',
-  },
+  // {
+  //   id: '51',
+  //   bpid: '5',
+  //   mpid: '5',
+  //   name: 'ECharts',
+  //   icon: 'line-chart',
+  //   route: '/chart/ECharts',
+  // },
   {
     id: '52',
     bpid: '5',

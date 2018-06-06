@@ -18,7 +18,7 @@ export default {
         if (from && from !== '/login') {
           yield put(routerRedux.push(from))
         } else {
-          yield put(routerRedux.push('/chart/ECharts'))
+          yield put(routerRedux.push('/chart/highCharts'))
         }
       } else {
         throw data
