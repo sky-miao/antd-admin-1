@@ -11,74 +11,6 @@ const chartList = [
     label: 'SimpleChart',
     value: 'simple',
   },
-  {
-    label: 'ChartShowLoading',
-    value: 'loading',
-  },
-  {
-    label: 'ChartAPI',
-    value: 'api',
-  },
-  {
-    label: 'ChartWithEvent',
-    value: 'events',
-  },
-  {
-    label: 'ThemeChart',
-    value: 'theme',
-  },
-  {
-    label: 'DynamicChart',
-    value: 'dynamic',
-  },
-  {
-    label: 'MapChart',
-    value: 'map',
-  },
-  {
-    label: 'AirportCoord',
-    value: 'airport',
-  },
-  {
-    label: 'Graph',
-    value: 'graph',
-  },
-  {
-    label: 'Calendar',
-    value: 'calendar',
-  },
-  {
-    label: 'Treemap',
-    value: 'treemap',
-  },
-  {
-    label: 'Gauge',
-    value: 'gauge',
-  },
-  {
-    label: 'GCalendar',
-    value: 'gcalendar',
-  },
-  {
-    label: 'LunarCalendar',
-    value: 'lunar',
-  },
-  {
-    label: 'Liquidfill',
-    value: 'liquid',
-  },
-  {
-    label: 'BubbleGradient',
-    value: 'BubbleGradientComponent',
-  },
-  {
-    label: 'TransparentBar3D',
-    value: 'TransparentBar3DComPonent',
-  },
-  {
-    label: 'MoonComponent',
-    value: 'MoonComponent',
-  },
 ]
 
 class Chart extends React.Component {
@@ -96,7 +28,7 @@ class Chart extends React.Component {
   }
   render () {
     return (<Page inner id="EChartsMain">
-      <RadioGroup options={chartList} defaultValue="dynamic" onChange={this.handleRadioGroupChange} />
+      <RadioGroup options={chartList} defaultValue="simple" onChange={this.handleRadioGroupChange} />
       <div className={styles.chart}>
         <EchartsComponent type={this.state.type} />
       </div>
