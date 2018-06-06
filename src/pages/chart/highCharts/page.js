@@ -1,10 +1,12 @@
 import React from 'react'
-import { Checkbox } from 'antd'
+import { Checkbox, Select } from 'antd'
+import { connect } from 'dva'
 import { Page } from 'components'
 import HighChartsComponent from './HighChartsComponent'
 import styles from './page.less'
 
 const CheckboxGroup = Checkbox.Group
+const Option = Select.Option
 
 const chartList = [
   {
@@ -29,19 +31,30 @@ class Chart extends React.Component {
   constructor () {
     super()
     this.state = {
-      type: ['MemAllocs'],
+      type: 'MemAllocs',
     }
-    this.handleRadioGroupChange = this.handleRadioGroupChange.bind(this)
+    this.handleCheckGroupChange = this.handleCheckGroupChange.bind(this)
   }
-  handleRadioGroupChange (e) {
-    console.log(e, 963022)
+  handleCheckGroupChange (e) {
     this.setState({
       type: e,
     })
   }
+  changeSel (key) {
+    this.props.querySh({
+      key,
+    })
+  }
   render () {
     return (<Page inner>
-      <CheckboxGroup options={chartList} defaultValue={['MemAllocs']} onChange={this.handleRadioGroupChange} />
+      <CheckboxGroup options={chartList} defaultValue={['MemAllocs']} onChange={this.handleCheckGroupChange} />
+      <Select
+        onChange={this.changeSel.bind(this)}
+        defaultValue={["1"]}
+      >
+        <Option key="1">第一个</Option>
+        <Option key="2">第二个</Option>
+      </Select>
       <div className={styles.chart}>
         <HighChartsComponent type={this.state.type} />
       </div>
@@ -49,5 +62,20 @@ class Chart extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    ...state,
+  }
+}
 
-export default Chart
+const mapDispatchToProps = (dispatch) => {
+  return {
+    querySh (payload) {
+      console.log(`query something and data = ${JSON.stringify(payload)}`)
+      // dispatch({ type: 'query/query', payload })
+      console.log(dispatch)
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Chart)
